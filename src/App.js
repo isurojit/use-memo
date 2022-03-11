@@ -33,7 +33,7 @@ const App = () => {
     <div>
       <input type="number" value={number} onChange={inputHandler} />
       <button onClick={themeChangeHandler}>Change theme</button>
-      <div style={themeStyle}>{doubleNumber}</div>
+      <h1 style={themeStyle}>{doubleNumber}</h1>
     </div>
   );
 };

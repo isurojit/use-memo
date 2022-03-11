@@ -44,7 +44,7 @@ button {
   padding: 1rem 2rem;
   font-size: 2rem;
 }
-div > div {
+h1 {
   font-size: 2rem;
   width: 50%;
   border: 1px solid black;
