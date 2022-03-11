@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import "./App.css";
 
 const App = () => {
@@ -8,10 +8,16 @@ const App = () => {
     return slowFucntion(number);
   }, [number]);
 
-  const themeStyle = {
-    backgroundColor: dark ? "black" : "white",
-    color: dark ? "white" : "black",
-  };
+  const themeStyle = useMemo(() => {
+    return {
+      backgroundColor: dark ? "black" : "white",
+      color: dark ? "white" : "black",
+    };
+  }, [dark]);
+
+  useEffect(() => {
+    console.log("theme changed");
+  }, [themeStyle]);
 
   const inputHandler = (e) => {
     setNumber(e.target.value);
@@ -19,7 +25,6 @@ const App = () => {
 
   const themeChangeHandler = (e) => {
     setDark((pre) => {
-      console.log(!pre);
       return !pre;
     });
   };
